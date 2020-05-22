@@ -5,7 +5,7 @@
 a)0(n)
 changes according to input size
 
-b)0(n^2)
+b)0(2^n)
 because of nested loops
 
 c)0(n)
@@ -16,6 +16,7 @@ that is 0(n)
 
 ## Exercise II
 Binary Search is the best method for broken eggs!
+It is O(log n) because the input size is decreased at each step.
 def binarySearch(input, high = None, low = None):
     low = 0
     high = len(input) -1 
@@ -29,4 +30,4 @@ def binarySearch(input, high = None, low = None):
     else: 
         print('eggs broken')
         low + 1
-    return binarySearch(input, high, low)
+    return binarySearch(input[mid], high, low)
