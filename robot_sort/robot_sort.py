@@ -96,8 +96,59 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        # right = self.move_right()
+        
+        while self.can_move_right():
+            self.move_right()
+            self.move_right()
+            self.swap_item()
+            self.swap_item()
+            self.move_right()
+            print('should be off on beg1',self.light_is_on())
+            self.set_light_on()
+            print('should be off on beg2', self.light_is_on())
+            if self.compare_item is 1: 
+                self.swap_item()
+                self.set_light_on()
+                print(self.set_light_off())
+                print('should be off if 1',self.light_is_on())
+            elif self.compare_item is -1: 
+                self.swap_item()
+                self.move_left()
+                self.swap_item()
+                print(self.set_light_off())
+                print('should be off if -1',self.light_is_on())
+            
+            else:
+                # self.move_right()
+                # self.move_left()
+                # self.move_left()
+                # self.move_left()
+                # self.move_left()
+                self.swap_item()
+                # self.swap_item()
+                swap = self.swap_item()
+                swap.move_right()
+                self.set_light_on()
+                self.set_light_off()
+                print('should be off if else', self.light_is_on())
+                
+                
+                    
+            
+            
+            
+            
+        
         # Fill this out
-        pass
+        # while self.can_move_right: 
+            
+        #     for  i in range(len(self._list) - 1):
+                
+        #         if self._list[i] > self._list[i+1]: 
+        #             self._list[i], self._list[i+1] = self._list[i+1], self._list[i]
+                    
+        # return self._list
 
 
 if __name__ == "__main__":

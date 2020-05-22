@@ -2,14 +2,30 @@
 
 ## Exercise I
 
-a)
+a)0(n)
+changes according to input size
 
+b)0(n^2)
+because of nested loops
 
-b)
-
-
-c)
+c)0(n)
+even though it is using recursion it is only
+decrementing by 1, so it is acting as a loop and 
+that is 0(n)
 
 ## Exercise II
 
-
+def binarySearch(input, high = None, low = None):
+    low = 0
+    high = len(input) -1 
+    mid = (low + high)//2
+    if input[mid] == input[high] or input[mid] == input[low]: 
+        print('eggs not broken on this floor')
+        return input[mid]
+    if input[mid] < input[high]:
+        print('eggs broken') 
+        high - 1
+    else: 
+        print('eggs broken')
+        low + 1
+    return binarySearch(input, high, low)
