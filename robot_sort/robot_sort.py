@@ -97,46 +97,68 @@ class SortingRobot:
         Sort the robot's list.
         """
         
-        self.move_right()
-        self.move_right()
-        self.swap_item()
+        # self.move_right()
+        # self.move_right()
+        # self.swap_item()
         self.swap_item()
         self.set_light_on()
         while self.light_is_on() == True:
-                    
-            if self.compare_item is 1 or 0: 
-                self.move_right()
-                
-                
-            elif self.compare_item is -1: 
+
+            while self.move_right() == True: 
+                if self.compare_item() > 0: 
+                    self.swap_item()
+                    break
+            self.set_light_off()
+            if self.compare_item() == None and self.move_right() == False:
                 self.swap_item()
-                self.move_right()
-            
-                self.set_light_on()
-            
-            if self.compare_item() == None:
-                self.swap_item()
-                self.swap_item()
-                while self.can_move_right() == True:
-                    
-                    self.move_right()
-                    if self.compare_item is 1 or 0: 
-                        self.move_right()
-                        
-                        
-                    elif self.compare_item is -1: 
-                        self.swap_item()
-                        self.move_right()
-                    
-                        self.set_light_on()
-                    
-                self.swap_item()
-                
-            if self.can_move_right() == False: 
-                
                 self.set_light_off()
                 
                 
+            else: 
+                #find spot in list holding none, place item, move right then swap and break.
+                
+                while self.light_is_on() == False:
+                    if self.compare_item() == None and self.swap_item():
+                        self.move_right()
+                        self.swap_item()
+                    self.set_light_on()
+        
+            
+
+
+
+            # if self.compare_item is 1 or 0: 
+            #     self.move_right()
+                
+                
+            # elif self.compare_item is -1: 
+            #     self.swap_item()
+            #     self.move_right()
+            
+            #     self.set_light_on()
+            
+            # if self.compare_item() == None:
+            #     self.swap_item()
+            #     self.swap_item()
+            #     while self.can_move_right() == True:
+                    
+            #         self.move_right()
+            #         if self.compare_item is 1 or 0: 
+            #             self.move_right()
+                        
+                        
+            #         elif self.compare_item is -1: 
+            #             self.swap_item()
+            #             self.move_right()
+                    
+            #             self.set_light_on()
+                    
+            #     self.swap_item()
+                
+            # if self.can_move_right() == False: 
+                
+            #     self.set_light_off()
+             
                     
             
             

@@ -5,8 +5,8 @@
 a)0(n)
 changes according to input size
 
-b)0(2^n)
-because of nested loops
+b)0(n^n)
+because it is doubling in value
 
 c)0(n)
 even though it is using recursion it is only
