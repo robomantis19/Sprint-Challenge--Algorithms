@@ -137,7 +137,9 @@ class SortingRobot:
                     
             
             
-            
+      #This bubble sort algorythm works as a reference, 
+      # but could not move items above and cannot use code
+      # below because it calls the instance directly.    
             
         
         # Fill this out

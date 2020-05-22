@@ -13,8 +13,9 @@ even though it is using recursion it is only
 decrementing by 1, so it is acting as a loop and 
 that is 0(n)
 
-## Exercise II
 
+## Exercise II
+Binary Search is the best method for broken eggs!
 def binarySearch(input, high = None, low = None):
     low = 0
     high = len(input) -1 
